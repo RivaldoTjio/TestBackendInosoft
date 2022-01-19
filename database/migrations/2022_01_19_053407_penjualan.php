@@ -15,7 +15,10 @@ class Penjualan extends Migration
     {
         Schema::create('Penjualan', function (Blueprint $table){
             $table->id();
-            $table->timestamp();
+            $table->string('jenis');
+            $table->timestamp('tgl_penjualan');
+            $table->integer('jumlah_stok_keluar');
+            $table->integer('total');
         });
     }
 
