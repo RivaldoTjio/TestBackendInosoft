@@ -6,14 +6,26 @@ use Illuminate\Support\Facades\Schema;
 
 class Penjualan extends Migration
 {
-
-    public function up(){
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
         Schema::create('Penjualan', function (Blueprint $table){
-           $table->id();
+            $table->id();
+            $table->timestamp();
         });
     }
 
-    public function down(){
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
         Schema::dropIfExists('Penjualan');
     }
 }
