@@ -2,25 +2,44 @@
 
 namespace App\Repository;
 
+use App\Mobil;
+use App\Models\MobilModel;
+
 class MongoMobilRepository implements RepositoryInterface
 {
+    protected $mobilModel;
 
-    public function insert(T $model)
+    public function __construct()
     {
-        // TODO: Implement insert() method.
+        $this->mobilModel = new MobilModel();
+    }
+
+
+    public function insert($model)
+    {
+        $this->mobilModel->tahun_keluaran = $model->getTahunKeluaran();
+       $this->mobilModel->warna = $model->getWarna();
+       $this->mobilModel->harga = $model->getHarga();
+       $this->mobilModel->mesin = $model->getMesin();
+       $this->mobilModel->kapasitas = $model->getKapasitasPenumpang();
+       $this->mobilModel->tipe = $model->getTipe();
+       $this->mobilModel->stok = 10;
+       $this->mobilModel->deleted = false;
+       $this->mobilModel->save();
+        return $this->mobilModel->fresh();
     }
 
     public function read($id)
     {
-        // TODO: Implement read() method.
+
     }
 
     public function readAll()
     {
-        // TODO: Implement readAll() method.
+        return $this->mobilModel->get();
     }
 
-    public function update(T $model)
+    public function update($model)
     {
         // TODO: Implement update() method.
     }

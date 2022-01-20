@@ -6,6 +6,7 @@ abstract class Kendaraan
 {
     private $tahun_keluaran;
     private $warna;
+    private $harga;
 
     /**
      * @return mixed
@@ -54,5 +55,4 @@ abstract class Kendaraan
     {
         $this->harga = $harga;
     }
-    private $harga;
 }

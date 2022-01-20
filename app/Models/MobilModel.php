@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class MobilModel extends Model
+class MobilModel extends Eloquent
 {
     protected $connection;
     protected $collection = 'Mobil';

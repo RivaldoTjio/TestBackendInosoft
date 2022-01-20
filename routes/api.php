@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+//Route::resource('/kendaraan', KendaraanController::class);
+Route::get('/kendaraan/test','KendaraanController@insert');
+Route::get('/kendaraan/readAll','KendaraanController@readAll');
+

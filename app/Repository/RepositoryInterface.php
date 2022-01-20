@@ -4,9 +4,9 @@ namespace App\Repository;
 
 interface RepositoryInterface
 {
-    public function insert(T $model);
+    public function insert($model);
     public function read($id);
     public function readAll();
-    public function update(T $model);
+    public function update($model);
     public function delete($id);
 }

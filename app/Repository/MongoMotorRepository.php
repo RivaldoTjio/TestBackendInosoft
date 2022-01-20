@@ -3,10 +3,21 @@
 namespace App\Repository;
 
 
+use App\Models\MotorModel;
+
 class MongoMotorRepository implements RepositoryInterface
 {
+    protected $motorModel;
 
-    public function insert(T $model)
+    /**
+     * @param $motorModel
+     */
+    public function __construct()
+    {
+        $this->motorModel = new MotorModel();
+    }
+
+    public function insert($model)
     {
         // TODO: Implement insert() method.
     }
@@ -18,10 +29,10 @@ class MongoMotorRepository implements RepositoryInterface
 
     public function readAll()
     {
-        // TODO: Implement readAll() method.
+        return $this->motorModel->get();
     }
 
-    public function update(T $model)
+    public function update($model)
     {
         // TODO: Implement update() method.
     }
